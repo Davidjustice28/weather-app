@@ -69,6 +69,7 @@ function displayWeather() {
         .then(() => {
         document.getElementById('city-input').value = null;
         document.getElementById('state-input').value = null;
+        closeMoreInfo();
         loadModule();
     });
 }
