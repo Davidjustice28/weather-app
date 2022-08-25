@@ -74,21 +74,27 @@ function displayWeather() {
     });
 }
 
+const infoButton = document.getElementById('info-button');
+
 function displayMoreInfo() {
-    moreInfoDiv.style.display = 'flex';
+    if(infoButton.innerText == "More Info") {
+        infoButton.innerText = "Close";
+        moreInfoDiv.style.display = "flex";
+    }else {
+        infoButton.innerText = "More Info";
+        moreInfoDiv.style.display = "none";
+    };
 }
 
 function closeMoreInfo() {
     moreInfoDiv.style.display = 'none';
 }
 
-const moreInfoDiv = document.getElementById('addition-info'); 
+const moreInfoDiv = document.getElementById('addition-info');
 
 const myButton = document.querySelector('button');
 myButton.addEventListener('click', displayWeather);
+infoButton.addEventListener('click', displayMoreInfo);
 
-const infoButton = document.getElementById('info-button');
-infoButton.addEventListener('click',displayMoreInfo);
 
-const icon = document.getElementById('icon');
-icon.addEventListener('click', closeMoreInfo);
+
